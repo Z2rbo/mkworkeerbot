@@ -1,50 +1,28 @@
 {
   "version": 2,
+  "public": true,
   "builds": [
     {
-      "src": "frontend/**",
+      "src": "frontend/**/*",
       "use": "@vercel/static"
     }
   ],
-  "rewrites": [
+  "routes": [
     {
-      "source": "/api/health",
-      "destination": "https://mkworkeerbot.up.railway.app/health"
+      "src": "/api/health/?",
+      "dest": "https://mkworkeerbot.up.railway.app/health"
     },
     {
-      "source": "/api/health/",
-      "destination": "https://mkworkeerbot.up.railway.app/health"
+      "src": "/api/(.*)",
+      "dest": "https://mkworkeerbot.up.railway.app/api/$1"
     },
     {
-      "source": "/api/(.*)",
-      "destination": "https://mkworkeerbot.up.railway.app/api/$1"
+      "src": "/uploads/(.*)",
+      "dest": "https://mkworkeerbot.up.railway.app/uploads/$1"
     },
     {
-      "source": "/uploads/(.*)",
-      "destination": "https://mkworkeerbot.up.railway.app/uploads/$1"
-    },
-    {
-      "source": "/(.*)",
-      "destination": "/frontend/$1"
-    }
-  ],
-  "headers": [
-    {
-      "source": "/(.*)",
-      "headers": [
-        {
-          "key": "X-Content-Type-Options",
-          "value": "nosniff"
-        },
-        {
-          "key": "X-Frame-Options",
-          "value": "DENY"
-        },
-        {
-          "key": "X-XSS-Protection",
-          "value": "1; mode=block"
-        }
-      ]
+      "src": "/(.*)",
+      "dest": "/frontend/$1"
     }
   ]
 }
