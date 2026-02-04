@@ -106,30 +106,104 @@
             <div class="works-filter">
                 <button class="filter-btn active" data-filter="all">Все</button>
                 <button class="filter-btn" data-filter="design">Дизайн</button>
-                <button class="filter-btn" data-filter="development">Разработка</button>
-                <button class="filter-btn" data-filter="marketing">Маркетинг</button>
+                <button class="filter-btn" data-filter="reels">Рилсы</button>
+                <button class="filter-btn" data-filter="youtube">YouTube</button>
             </div>
 
             <!-- Works Grid -->
             <div class="works-grid" id="worksGrid">
-                <!-- Works будут загружаться динамически через API -->
-                <div class="work-placeholder">
-                    <div class="placeholder-icon">
-                        <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-                            <rect x="3" y="3" width="18" height="18" rx="2"/>
-                            <circle cx="8.5" cy="8.5" r="1.5"/>
-                            <path d="M21 15l-5-5L5 21"/>
-                        </svg>
+                <!-- Дизайн -->
+                <div class="work-card" data-category="design">
+                    <div class="work-image">
+                        <div class="work-overlay">
+                            <a href="https://t.me/dsgnportfromz2rbo" target="_blank" class="work-link">Смотреть</a>
+                        </div>
+                        <div class="work-placeholder-img">
+                            <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                                <rect x="3" y="3" width="18" height="18" rx="2"/>
+                                <circle cx="8.5" cy="8.5" r="1.5"/>
+                                <path d="M21 15l-5-5L5 21"/>
+                            </svg>
+                        </div>
                     </div>
-                    <p>Работы загружаются...</p>
+                    <div class="work-info">
+                        <span class="work-category">Дизайн</span>
+                        <h3 class="work-title">Дизайн курсов и презентаций</h3>
+                        <p class="work-description">Презентации, обложки, визуал для инфопродуктов. Работал с блогерами-миллиониками.</p>
+                    </div>
+                </div>
+
+                <!-- Рилсы -->
+                <div class="work-card" data-category="reels">
+                    <div class="work-image">
+                        <div class="work-overlay">
+                            <a href="https://t.me/reelsexamples" target="_blank" class="work-link">Смотреть</a>
+                        </div>
+                        <div class="work-placeholder-img">
+                            <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                                <polygon points="23 7 16 12 23 17 23 7"/>
+                                <rect x="1" y="5" width="15" height="14" rx="2"/>
+                            </svg>
+                        </div>
+                    </div>
+                    <div class="work-info">
+                        <span class="work-category">Рилсы</span>
+                        <h3 class="work-title">Монтаж рилсов и шортсов</h3>
+                        <p class="work-description">Вирусные ролики для блогеров и пабликов. Кейсы с миллиониками.</p>
+                    </div>
+                </div>
+
+                <!-- YouTube -->
+                <div class="work-card" data-category="youtube">
+                    <div class="work-image">
+                        <div class="work-overlay">
+                            <a href="https://youtube.com/@m1ndpeak" target="_blank" class="work-link">Смотреть</a>
+                        </div>
+                        <div class="work-placeholder-img">
+                            <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                                <path d="M22.54 6.42a2.78 2.78 0 0 0-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 0 0-1.94 2A29 29 0 0 0 1 11.75a29 29 0 0 0 .46 5.33A2.78 2.78 0 0 0 3.4 19c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 0 0 1.94-2 29 29 0 0 0 .46-5.25 29 29 0 0 0-.46-5.33z"/>
+                                <polygon points="9.75 15.02 15.5 11.75 9.75 8.48 9.75 15.02"/>
+                            </svg>
+                        </div>
+                    </div>
+                    <div class="work-info">
+                        <span class="work-category">YouTube</span>
+                        <h3 class="work-title">Канал m1ndpeak</h3>
+                        <p class="work-description">15 000 подписчиков за 10 видео. Контент про саморазвитие и бизнес.</p>
+                    </div>
+                </div>
+
+                <!-- Telegram Боты -->
+                <div class="work-card" data-category="design">
+                    <div class="work-image">
+                        <div class="work-overlay">
+                            <a href="#contact" class="work-link">Заказать</a>
+                        </div>
+                        <div class="work-placeholder-img">
+                            <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                                <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/>
+                                <polyline points="7.5 4.21 12 6.81 16.5 4.21"/>
+                                <polyline points="7.5 19.79 7.5 14.6 3 12"/>
+                                <polyline points="21 12 16.5 14.6 16.5 19.79"/>
+                                <polyline points="3.27 6.96 12 12.01 20.73 6.96"/>
+                            </svg>
+                        </div>
+                    </div>
+                    <div class="work-info">
+                        <span class="work-category">Разработка</span>
+                        <h3 class="work-title">Telegram Боты</h3>
+                        <p class="work-description">Воронки продаж, чат-боты, боты-магазины. Интеграции с платежами.</p>
+                    </div>
                 </div>
             </div>
 
             <div class="works-cta">
-                <a href="#" class="btn btn-secondary" id="loadMoreBtn">
-                    <span>Загрузить ещё</span>
+                <a href="https://t.me/dsgnportfromz2rbo" target="_blank" class="btn btn-secondary">
+                    <span>Больше работ в Telegram</span>
                     <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                        <path d="M12 5v14M5 12l7 7 7-7"/>
+                        <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/>
+                        <polyline points="15 3 21 3 21 9"/>
+                        <line x1="10" y1="14" x2="21" y2="3"/>
                     </svg>
                 </a>
             </div>

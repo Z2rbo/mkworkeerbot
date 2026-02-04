@@ -723,6 +723,33 @@ section {
     opacity: 1;
 }
 
+.work-placeholder-img {
+    width: 100%;
+    height: 200px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, rgba(99, 102, 241, 0.1) 0%, rgba(139, 92, 246, 0.1) 100%);
+    color: var(--primary);
+}
+
+.work-link {
+    display: inline-block;
+    padding: 0.75rem 1.5rem;
+    background: var(--primary);
+    color: white;
+    text-decoration: none;
+    border-radius: var(--radius-md);
+    font-weight: 600;
+    font-size: var(--font-size-sm);
+    transition: var(--transition-base);
+}
+
+.work-link:hover {
+    background: var(--primary-dark);
+    transform: translateY(-2px);
+}
+
 .work-info {
     padding: var(--gap-lg);
 }
