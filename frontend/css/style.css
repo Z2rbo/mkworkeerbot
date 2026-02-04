@@ -805,6 +805,48 @@ section {
     opacity: 0.3;
 }
 
+.about-photo {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: var(--radius-xl);
+}
+
+.stat-suffix {
+    font-size: var(--font-size-2xl);
+    font-weight: 700;
+    color: var(--primary);
+}
+
+.about-experience {
+    margin-top: 1.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.about-experience h4 {
+    font-size: var(--font-size-lg);
+    font-weight: 600;
+    margin-bottom: 0.75rem;
+    color: var(--text-primary);
+}
+
+.experience-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.experience-list li {
+    padding: 0.5rem 0;
+    font-size: var(--font-size-base);
+    color: var(--text-secondary);
+    border-bottom: 1px solid var(--border-color);
+}
+
+.experience-list li:last-child {
+    border-bottom: none;
+}
+
 .about-stats {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
