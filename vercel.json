@@ -8,6 +8,10 @@
   ],
   "rewrites": [
     {
+      "source": "/api/health",
+      "destination": "https://mkworkeerbot.up.railway.app/health"
+    },
+    {
       "source": "/api/(.*)",
       "destination": "https://mkworkeerbot.up.railway.app/api/$1"
     },
