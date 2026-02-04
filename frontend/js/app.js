@@ -8,7 +8,7 @@ const API_BASE_URL = window.location.hostname === 'localhost'
     ? 'http://localhost:8000/api' 
     : '/api';
 
-const TELEGRAM_BOT_URL = 'https://t.me/your_portfolio_bot';
+const TELEGRAM_BOT_URL = 'https://t.me/mkworkeerbot';
 
 // DOM Elements
 const elements = {

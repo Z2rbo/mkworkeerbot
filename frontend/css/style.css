@@ -1372,24 +1372,141 @@ section {
 /* ==========================================
    Responsive
    ========================================== */
+/* Work card color variants */
+.work-video {
+    background: linear-gradient(135deg, rgba(239, 68, 68, 0.2) 0%, rgba(239, 68, 68, 0.1) 100%);
+    color: #ef4444;
+}
+
+.work-youtube {
+    background: linear-gradient(135deg, rgba(255, 0, 0, 0.2) 0%, rgba(255, 0, 0, 0.1) 100%);
+    color: #ff0000;
+}
+
+.work-bot {
+    background: linear-gradient(135deg, rgba(0, 136, 204, 0.2) 0%, rgba(0, 136, 204, 0.1) 100%);
+    color: #0088cc;
+}
+
+/* ==========================================
+   Responsive - Tablet
+   ========================================== */
+@media (max-width: 1024px) {
+    .nav-links {
+        display: none;
+    }
+    
+    .menu-toggle {
+        display: flex;
+    }
+    
+    .hero-title {
+        font-size: clamp(2.5rem, 8vw, 4rem);
+    }
+    
+    .about-grid {
+        grid-template-columns: 1fr;
+        gap: var(--gap-xl);
+    }
+    
+    .about-image {
+        order: -1;
+    }
+    
+    .contact-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .services-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* ==========================================
+   Responsive - Mobile
+   ========================================== */
 @media (max-width: 768px) {
     :root {
         --section-padding: 80px;
+    }
+    
+    .container {
+        padding: 0 1rem;
+    }
+    
+    .hero-content {
+        padding: 0 1rem;
+    }
+    
+    .hero-title {
+        font-size: clamp(2rem, 10vw, 3rem);
+    }
+    
+    .hero-description {
+        font-size: var(--font-size-base);
+    }
+    
+    .section-title {
+        font-size: var(--font-size-2xl);
     }
     
     .works-grid {
         grid-template-columns: 1fr;
     }
     
+    .works-filter {
+        flex-wrap: wrap;
+        gap: 0.5rem;
+    }
+    
+    .filter-btn {
+        padding: 0.5rem 1rem;
+        font-size: var(--font-size-sm);
+    }
+    
     .about-stats {
         grid-template-columns: repeat(3, 1fr);
+        gap: 0.5rem;
+    }
+    
+    .stat-item {
+        padding: var(--gap-md);
     }
     
     .stat-number {
-        font-size: var(--font-size-2xl);
+        font-size: var(--font-size-xl);
+    }
+    
+    .stat-label {
+        font-size: var(--font-size-xs);
+    }
+    
+    .services-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .service-card {
+        padding: var(--gap-lg);
+    }
+    
+    .experience-list li {
+        font-size: var(--font-size-sm);
+    }
+    
+    .footer-content {
+        flex-direction: column;
+        text-align: center;
+        gap: var(--gap-lg);
+    }
+    
+    .btn-telegram span {
+        display: none;
     }
 }
 
+/* ==========================================
+   Responsive - Small Mobile
+   ========================================== */
 @media (max-width: 480px) {
     :root {
         --section-padding: 60px;
@@ -1397,9 +1514,37 @@ section {
     
     .hero-cta {
         flex-direction: column;
+        width: 100%;
     }
     
-    .btn {
+    .hero-cta .btn {
         width: 100%;
+    }
+    
+    .about-stats {
+        grid-template-columns: 1fr;
+    }
+    
+    .stat-item {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        text-align: left;
+    }
+    
+    .stat-number, .stat-suffix {
+        font-size: var(--font-size-xl);
+    }
+    
+    .work-info {
+        padding: var(--gap-md);
+    }
+    
+    .work-title {
+        font-size: var(--font-size-lg);
+    }
+    
+    .contact-form {
+        padding: var(--gap-lg);
     }
 }
