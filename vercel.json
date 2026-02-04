@@ -9,11 +9,11 @@
   "rewrites": [
     {
       "source": "/api/(.*)",
-      "destination": "https://your-railway-api.railway.app/api/$1"
+      "destination": "https://mkworkeerbot.up.railway.app/api/$1"
     },
     {
       "source": "/uploads/(.*)",
-      "destination": "https://your-railway-api.railway.app/uploads/$1"
+      "destination": "https://mkworkeerbot.up.railway.app/uploads/$1"
     },
     {
       "source": "/(.*)",
