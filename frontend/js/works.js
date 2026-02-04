@@ -47,72 +47,56 @@ async function loadWorks() {
     }
 }
 
-// Demo works data
+// Demo works data - Makar's real portfolio
 function getDemoWorks() {
     return [
         {
             id: 1,
-            title: 'E-Commerce Platform',
-            category: 'development',
-            description: 'Полнофункциональный интернет-магазин с корзиной, оплатой и личным кабинетом',
-            image: 'https://images.unsplash.com/photo-1661956602116-aa6865609028?w=600&h=400&fit=crop',
-            link: '#'
+            title: 'Дизайн курсов',
+            category: 'design',
+            description: 'Презентации и визуал для инфопродуктов. Кейсы с миллиониками.',
+            image: 'images/course.jpg',
+            link: 'https://t.me/mkworkeerbot'
         },
         {
             id: 2,
-            title: 'Mobile Banking App',
+            title: 'Дизайн сайтов',
             category: 'design',
-            description: 'UI/UX дизайн мобильного приложения для финтех стартапа',
-            image: 'https://images.unsplash.com/photo-1563986768609-322da13575f3?w=600&h=400&fit=crop',
-            link: '#'
+            description: 'Лендинги и многостраничные сайты для бизнеса.',
+            image: 'images/site.jpg',
+            link: 'https://t.me/mkworkeerbot'
         },
         {
             id: 3,
-            title: 'Brand Identity',
+            title: 'Инфографика WB',
             category: 'design',
-            description: 'Создание фирменного стиля для креативного агентства',
-            image: 'https://images.unsplash.com/photo-1634942537034-2531766767d1?w=600&h=400&fit=crop',
-            link: '#'
+            description: 'Карточки товаров и инфографика для Wildberries.',
+            image: 'images/wbinf.jpg',
+            link: 'https://t.me/mkworkeerbot'
         },
         {
             id: 4,
-            title: 'Marketing Dashboard',
-            category: 'development',
-            description: 'Аналитическая панель для отслеживания маркетинговых кампаний',
-            image: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=600&h=400&fit=crop',
-            link: '#'
+            title: 'Монтаж рилсов',
+            category: 'reels',
+            description: 'Вирусные ролики для блогеров. Кейсы с миллиониками.',
+            image: 'images/course.jpg',
+            link: 'https://t.me/reelsexamples/24'
         },
         {
             id: 5,
-            title: 'Social Media Campaign',
-            category: 'marketing',
-            description: 'Комплексная SMM стратегия с ростом вовлеченности на 300%',
-            image: 'https://images.unsplash.com/photo-1611162617474-5b21e879e113?w=600&h=400&fit=crop',
-            link: '#'
+            title: 'Канал m1ndpeak',
+            category: 'youtube',
+            description: '15 000 подписчиков за 10 видео.',
+            image: 'images/site.jpg',
+            link: 'https://youtube.com/@m1ndpeak'
         },
         {
             id: 6,
-            title: 'Corporate Website',
-            category: 'development',
-            description: 'Корпоративный сайт с CMS и интеграцией с CRM системой',
-            image: 'https://images.unsplash.com/photo-1467232004584-a241de8bcf5d?w=600&h=400&fit=crop',
-            link: '#'
-        },
-        {
-            id: 7,
-            title: 'Product Launch',
-            category: 'marketing',
-            description: 'Запуск нового продукта с охватом более 1 млн пользователей',
-            image: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=600&h=400&fit=crop',
-            link: '#'
-        },
-        {
-            id: 8,
-            title: 'Travel App Design',
+            title: 'Telegram Боты',
             category: 'design',
-            description: 'Концепт дизайна приложения для планирования путешествий',
-            image: 'https://images.unsplash.com/photo-1488646953014-85cb44e25828?w=600&h=400&fit=crop',
-            link: '#'
+            description: 'Воронки продаж и автоматизация.',
+            image: 'images/wbinf.jpg',
+            link: 'https://t.me/mkworkeerbot'
         }
     ];
 }
@@ -166,8 +150,10 @@ function renderWorks() {
 
 // Create work card HTML
 function createWorkCard(work, index) {
-    const categoryLabels = {
+    const catLabels = {
         design: 'Дизайн',
+        reels: 'Рилсы',
+        youtube: 'YouTube',
         development: 'Разработка',
         marketing: 'Маркетинг'
     };
@@ -187,7 +173,7 @@ function createWorkCard(work, index) {
                 </div>
             </div>
             <div class="work-info">
-                <span class="work-category">${categoryLabels[work.category] || work.category}</span>
+                <span class="work-category">${catLabels[work.category] || work.category}</span>
                 <h3 class="work-title">${work.title}</h3>
                 <p class="work-description">${work.description}</p>
             </div>
@@ -219,6 +205,15 @@ function initFilters() {
         });
     });
 }
+
+// Category labels mapping
+const categoryLabels = {
+    design: 'Дизайн',
+    reels: 'Рилсы',
+    youtube: 'YouTube',
+    development: 'Разработка',
+    marketing: 'Маркетинг'
+};
 
 // Load more functionality
 function initLoadMore() {
