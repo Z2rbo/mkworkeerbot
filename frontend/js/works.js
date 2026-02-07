@@ -117,7 +117,8 @@ function getDemoWorks() {
             title: 'Монтаж рилсов',
             category: 'reels',
             description: 'Вирусные ролики для блогеров-миллиоников. Динамичный монтаж, цветокоррекция, motion-графика. Рилсы, шортсы, TikTok.',
-            image: 'images/course.jpg',
+            image: 'images/reels-1.png',
+            images: ['images/reels-1.png', 'images/reels-2.png'],
             link: 'https://t.me/mkworkeerbot',
             tags: ['Рилсы', 'Шортсы', 'Монтаж']
         },
@@ -135,7 +136,8 @@ function getDemoWorks() {
             title: 'Telegram Боты',
             category: 'development',
             description: 'Разработка ботов для автоматизации бизнеса: воронки продаж, чат-боты, интеграции с платежами, рассылки и уведомления.',
-            image: 'images/site.jpg',
+            image: 'images/bot.jpg',
+            images: ['images/bot.jpg', 'images/bot-2.png'],
             link: 'https://t.me/mkworkeerbot',
             tags: ['Боты', 'Автоматизация', 'Воронки']
         }
