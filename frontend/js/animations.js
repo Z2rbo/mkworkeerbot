@@ -32,28 +32,49 @@ function initParallax() {
     });
 }
 
-// 3D Tilt Effect for Cards
+// 3D Tilt Effect for Cards (event delegation for dynamic elements)
 function initTiltEffect() {
-    const tiltElements = document.querySelectorAll('.work-card, .service-card');
+    // Static elements
+    document.querySelectorAll('.service-card').forEach(el => attachTilt(el));
     
-    tiltElements.forEach(el => {
-        el.addEventListener('mousemove', (e) => {
-            const rect = el.getBoundingClientRect();
+    // Delegated tilt for dynamically rendered work-cards
+    const worksGrid = document.getElementById('worksGrid');
+    if (worksGrid) {
+        worksGrid.addEventListener('mousemove', (e) => {
+            const card = e.target.closest('.work-card');
+            if (!card) return;
+            const rect = card.getBoundingClientRect();
             const x = e.clientX - rect.left;
             const y = e.clientY - rect.top;
-            
-            const centerX = rect.width / 2;
-            const centerY = rect.height / 2;
-            
-            const rotateX = (y - centerY) / 20;
-            const rotateY = (centerX - x) / 20;
-            
-            el.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) translateZ(10px)`;
+            const rotateX = (y - rect.height / 2) / 25;
+            const rotateY = (rect.width / 2 - x) / 25;
+            card.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) translateY(-8px) scale(1.02)`;
         });
-        
-        el.addEventListener('mouseleave', () => {
-            el.style.transform = 'perspective(1000px) rotateX(0) rotateY(0) translateZ(0)';
+        worksGrid.addEventListener('mouseleave', (e) => {
+            const cards = worksGrid.querySelectorAll('.work-card');
+            cards.forEach(c => c.style.transform = '');
+        }, true);
+        // Reset individual card on mouse leave
+        worksGrid.addEventListener('mouseout', (e) => {
+            const card = e.target.closest('.work-card');
+            if (card && !card.contains(e.relatedTarget)) {
+                card.style.transform = '';
+            }
         });
+    }
+}
+
+function attachTilt(el) {
+    el.addEventListener('mousemove', (e) => {
+        const rect = el.getBoundingClientRect();
+        const x = e.clientX - rect.left;
+        const y = e.clientY - rect.top;
+        const rotateX = (y - rect.height / 2) / 25;
+        const rotateY = (rect.width / 2 - x) / 25;
+        el.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) translateZ(10px)`;
+    });
+    el.addEventListener('mouseleave', () => {
+        el.style.transform = '';
     });
 }
 
@@ -215,8 +236,8 @@ const animationObserver = new IntersectionObserver((entries) => {
     });
 }, observerOptions);
 
-// Observe elements
-document.querySelectorAll('.section-header, .work-card, .service-card, .about-grid').forEach(el => {
+// Observe static elements (work-cards are animated by works.js)
+document.querySelectorAll('.section-header, .service-card, .about-grid').forEach(el => {
     animationObserver.observe(el);
 });
 

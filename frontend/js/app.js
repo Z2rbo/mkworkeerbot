@@ -55,19 +55,24 @@ function hidePreloader() {
 
 // Navigation
 function initNavigation() {
-    // Header scroll effect
+    // Header scroll effect (throttled)
     let lastScroll = 0;
+    let scrollTicking = false;
     
     window.addEventListener('scroll', () => {
-        const currentScroll = window.pageYOffset;
-        
-        if (currentScroll > 50) {
-            elements.header.classList.add('scrolled');
-        } else {
-            elements.header.classList.remove('scrolled');
+        if (!scrollTicking) {
+            requestAnimationFrame(() => {
+                const currentScroll = window.pageYOffset;
+                if (currentScroll > 50) {
+                    elements.header.classList.add('scrolled');
+                } else {
+                    elements.header.classList.remove('scrolled');
+                }
+                lastScroll = currentScroll;
+                scrollTicking = false;
+            });
+            scrollTicking = true;
         }
-        
-        lastScroll = currentScroll;
     });
 
     // Mobile menu toggle
@@ -131,17 +136,19 @@ function initCustomCursor() {
     }
     animateCursor();
 
-    // Hover effects
-    const hoverElements = document.querySelectorAll('a, button, .work-card, input, textarea, select');
-    hoverElements.forEach(el => {
-        el.addEventListener('mouseenter', () => {
+    // Hover effects (delegation for dynamic elements like .work-card)
+    const hoverSelectors = 'a, button, .work-card, input, textarea, select';
+    document.addEventListener('mouseover', (e) => {
+        if (e.target.closest(hoverSelectors)) {
             elements.cursor.classList.add('hover');
             elements.cursorFollower.classList.add('hover');
-        });
-        el.addEventListener('mouseleave', () => {
+        }
+    });
+    document.addEventListener('mouseout', (e) => {
+        if (e.target.closest(hoverSelectors)) {
             elements.cursor.classList.remove('hover');
             elements.cursorFollower.classList.remove('hover');
-        });
+        }
     });
 }
 

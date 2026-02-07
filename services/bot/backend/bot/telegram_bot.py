@@ -60,33 +60,37 @@ logger = logging.getLogger(__name__)
 # Text constants
 TEXTS = {
     "welcome": """
-*Привет! Я Макар*
+*Привет! Я Макар* \U0001f91d
 
 Мне 16 лет. Занимаюсь дизайном курсов, монтажом рилсов и созданием Telegram-ботов.
 
-*Услуги:*
-• Дизайн курсов — презентации, обложки, визуал
-• Монтаж рилсов — вирусные ролики для блогеров
-• Telegram Боты — воронки продаж и автоматизация
+*Мои услуги:*
+\U0001f3a8 Дизайн — курсы, сайты, WB, чек-листы, аватарки, баннеры
+\U0001f3ac Монтаж рилсов — вирусные ролики для блогеров
+\U0001f916 Telegram Боты — воронки продаж и автоматизация
+\U0001f310 Дизайн сайтов — лендинги и интернет-магазины
 
 *Результаты:*
-• 15к подписчиков на YouTube за 10 видео
-• Кейсы с блогерами-миллиониками
+\U0001f4c8 15к подписчиков на YouTube за 10 видео
+\U0001f525 Кейсы с блогерами-миллиониками
+\U0001f3af 60+ человек на ивентах
 
-Выберите раздел:
+Выберите раздел \U0001f447
     """,
     
     "design_info": """
-*Дизайн курсов и презентаций*
+*Дизайн курсов, сайтов и не только*
 
-Создаю визуал для инфопродуктов и блогеров.
+Создаю визуал для инфопродуктов, блогеров и бизнеса.
 
 *Что делаю:*
 • Презентации для курсов и вебинаров
-• Обложки и баннеры
+• Дизайн сайтов — лендинги, интернет-магазины
+• Инфографика для Wildberries
+• Чек-листы и PDF-материалы
+• Аватарки для каналов и соцсетей
+• Баннеры и оформление мероприятий
 • Визуальный стиль продукта
-• Дизайн для соцсетей
-• Оформление Telegram-каналов
 
 *Сроки:* от 2 дней
 *Стоимость:* от 5000₽
@@ -237,22 +241,22 @@ TEXTS = {
 def get_main_keyboard():
     return InlineKeyboardMarkup([
         [
-            InlineKeyboardButton("Дизайн", callback_data="service_design"),
-            InlineKeyboardButton("Рилсы", callback_data="service_development")
+            InlineKeyboardButton("\U0001f3a8 Дизайн", callback_data="service_design"),
+            InlineKeyboardButton("\U0001f3ac Рилсы", callback_data="service_development")
         ],
         [
-            InlineKeyboardButton("Telegram Боты", callback_data="service_bot"),
-            InlineKeyboardButton("Контент", callback_data="service_marketing")
+            InlineKeyboardButton("\U0001f916 Telegram Боты", callback_data="service_bot"),
+            InlineKeyboardButton("\U0001f4c8 Контент", callback_data="service_marketing")
         ],
         [
-            InlineKeyboardButton("Портфолио", callback_data="portfolio"),
-            InlineKeyboardButton("Обо мне", callback_data="about")
+            InlineKeyboardButton("\U0001f4c1 Портфолио", callback_data="portfolio"),
+            InlineKeyboardButton("\U0001f464 Обо мне", callback_data="about")
         ],
         [
-            InlineKeyboardButton("Оставить заявку", callback_data="contact")
+            InlineKeyboardButton("\U0001f4dd Оставить заявку", callback_data="contact")
         ],
         [
-            InlineKeyboardButton("Открыть сайт", url=WEBSITE_URL)
+            InlineKeyboardButton("\U0001f310 Открыть сайт", url=WEBSITE_URL)
         ]
     ])
 
@@ -580,12 +584,12 @@ async def services_command(update: Update, context: ContextTypes.DEFAULT_TYPE) -
     """Show services menu."""
     keyboard = InlineKeyboardMarkup([
         [
-            InlineKeyboardButton("🎨 Дизайн", callback_data="service_design"),
-            InlineKeyboardButton("💻 Разработка", callback_data="service_development")
+            InlineKeyboardButton("\U0001f3a8 Дизайн", callback_data="service_design"),
+            InlineKeyboardButton("\U0001f3ac Рилсы", callback_data="service_development")
         ],
         [
-            InlineKeyboardButton("🤖 Telegram Боты", callback_data="service_bot"),
-            InlineKeyboardButton("📈 Маркетинг", callback_data="service_marketing")
+            InlineKeyboardButton("\U0001f916 Telegram Боты", callback_data="service_bot"),
+            InlineKeyboardButton("\U0001f4c8 Маркетинг", callback_data="service_marketing")
         ]
     ])
     
